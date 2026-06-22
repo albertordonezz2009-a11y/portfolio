@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description"
+        content="Nocaut Lavanana Group — Tu tienda especializada en equipamiento premium para artes marciales y deportes de combate en Santa Coloma de Gramenet.">
+    <title>Nocaut Lavanana Group | Equipamiento Premium de Combate en Santa Coloma de Gramenet</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&family=Geist:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#d90429",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#e4e2e2",
+                        "surface-tint": "#d90429",
+                        "secondary-fixed": "#e5e2e1",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "surface-bright": "#393939",
+                        "on-primary-container": "#7b7979",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface": "#131314",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#303030",
+                        "tertiary": "#c6c6c6",
+                        "on-background": "#e4e2e2",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-primary": "#5f5e5e",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#474746",
+                        "surface-container-high": "#2a2a2a",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-secondary": "#313030",
+                        "on-tertiary-container": "#79797a",
+                        "surface-container-highest": "#343535",
+                        "secondary": "#c8c6c5",
+                        "surface-container": "#1f2020",
+                        "background": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "primary-fixed-dim": "#d90429",
+                        "tertiary-fixed": "#e3e2e2",
+                        "outline": "#8e9192",
+                        "tertiary-container": "#090a0b",
+                        "on-surface": "#e4e2e2",
+                        "surface-dim": "#131314",
+                        "surface-container-low": "#1b1c1c",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-surface-variant": "#c4c7c7",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary-container": "#0a0a0a",
+                        "outline-variant": "#444748",
+                        "surface-variant": "#343535",
+                        "on-tertiary": "#2f3131"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-desktop": "80px",
+                        "margin-mobile": "24px",
+                        "gutter": "32px",
+                        "stack-xl": "160px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Geist"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "data-mono": ["JetBrains Mono"],
+                        "label-caps": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "data-mono": ["14px", { "lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.5", "letterSpacing": "0.15em", "fontWeight": "500" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0e0e0e;
+            color: #e4e2e2;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 1px solid rgba(217, 4, 41, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.15s ease-out, width 0.3s, height 0.3s, background-color 0.3s;
+            transform: translate(-50%, -50%);
+        }
+
+        .custom-cursor.hover {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(217, 4, 41, 0.1);
+            border-color: rgba(217, 4, 41, 0.8);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(217, 4, 41, 0.3);
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mask-text {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .pulse-indicator {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.2;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .red-glow {
+            box-shadow: 0 0 30px 2px rgba(217, 4, 41, 0.15);
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0e0e0e;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d90429;
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body class="selection:bg-primary selection:text-on-primary">
+    <div class="custom-cursor hidden md:block" id="cursor"></div>
+
+    <!-- SIDE NAV -->
+    <nav
+        class="hidden lg:flex flex-col items-center py-8 z-50 fixed left-0 top-0 h-full w-20 hover:w-64 transition-all duration-700 bg-surface-container-lowest/80 backdrop-blur-3xl border-r border-white/5 group">
+        <div class="mb-12">
+            <span class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tighter">N</span>
+            <span
+                class="hidden group-hover:inline font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tighter">OCAUT</span>
+        </div>
+        <div
+            class="flex flex-col gap-12 flex-grow items-center group-hover:items-start group-hover:px-8 w-full transition-all">
+            <a href="#sobre-nosotros"
+                class="flex items-center gap-4 text-on-surface-variant opacity-40 hover:opacity-100 hover:text-primary transition-all duration-500 w-full justify-center group-hover:justify-start py-2">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">info</span>
+                <span class="hidden group-hover:block font-data-mono text-data-mono uppercase">Nosotros</span>
+            </a>
+            <a href="#marcas"
+                class="flex items-center gap-4 text-on-surface-variant opacity-40 hover:opacity-100 hover:text-primary transition-all duration-500 w-full justify-center group-hover:justify-start py-2">
+                <span class="material-symbols-outlined">stars</span>
+                <span class="hidden group-hover:block font-data-mono text-data-mono uppercase">Marcas</span>
+            </a>
+            <a href="#productos"
+                class="flex items-center gap-4 text-on-surface-variant opacity-40 hover:opacity-100 hover:text-primary transition-all duration-500 w-full justify-center group-hover:justify-start py-2">
+                <span class="material-symbols-outlined">inventory_2</span>
+                <span class="hidden group-hover:block font-data-mono text-data-mono uppercase">Equipamiento</span>
+            </a>
+            <a href="#ventajas"
+                class="flex items-center gap-4 text-on-surface-variant opacity-40 hover:opacity-100 hover:text-primary transition-all duration-500 w-full justify-center group-hover:justify-start py-2">
+                <span class="material-symbols-outlined">workspace_premium</span>
+                <span class="hidden group-hover:block font-data-mono text-data-mono uppercase">Ventajas</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- TOP NAV -->
+    <header
+        class="navbar docked full-width top-0 sticky z-40 bg-background/80 backdrop-blur-xl border-b border-white/5 transition-all duration-500">
+        <div class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+            <div class="font-headline-lg text-headline-lg tracking-tighter text-on-surface lg:hidden">NOCAUT</div>
+            <nav class="hidden md:flex gap-12">
+                <a class="text-on-surface-variant/60 hover:text-primary transition-colors duration-500 font-label-caps text-label-caps"
+                    href="#sobre-nosotros">Sobre Nosotros</a>
+                <a class="text-on-surface-variant/60 hover:text-primary transition-colors duration-500 font-label-caps text-label-caps"
+                    href="#marcas">Marcas</a>
+                <a class="text-on-surface-variant/60 hover:text-primary transition-colors duration-500 font-label-caps text-label-caps"
+                    href="#productos">Equipamiento</a>
+                <a class="text-on-surface-variant/60 hover:text-primary transition-colors duration-500 font-label-caps text-label-caps"
+                    href="#ventajas">Ventajas</a>
+            </nav>
+            <a href="https://www.instagram.com/nocautlavananagroup/" target="_blank"
+                class="font-label-caps text-label-caps px-8 py-3 bg-primary text-on-primary hover:bg-primary/90 transition-all duration-300 red-glow">Instagram</a>
+        </div>
+    </header>
+
+    <main class="lg:pl-20">
+        <!-- HERO SECTION -->
+        <section class="relative h-screen flex items-center justify-center overflow-hidden px-margin-desktop fade-in">
+            <div
+                class="absolute inset-0 -z-10 opacity-20 bg-[radial-gradient(circle_at_center,_#d90429_0%,_transparent_70%)]">
+            </div>
+            <div class="relative z-10 text-center max-w-5xl">
+                <div class="mb-8 flex justify-center items-center gap-6">
+                    <span class="w-16 h-px bg-primary/40"></span>
+                    <span class="font-data-mono text-data-mono tracking-[0.4em] uppercase text-primary pulse-indicator">
+                        NOCAUT LAVANANA GROUP / SANTA COLOMA DE GRAMENET </span>
+                    <span class="w-16 h-px bg-primary/40"></span>
+                </div>
+                <h1 class="font-display-lg text-display-lg mb-8 tracking-tighter mask-text leading-[0.95]">
+                    EQUIPAMIENTO PREMIUM PARA <br /> <span class="text-primary italic">AUTÉNTICOS LUCHADORES</span>
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-16 opacity-80">
+                    Nocaut Lavanana Group — Tu referencia en Santa Coloma de Gramenet para boxeo, MMA, Muay Thai y
+                    Jiu-Jitsu de las mejores marcas del sector.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-8 items-center">
+                    <a class="group flex items-center gap-4 font-label-caps text-label-caps px-12 py-6 bg-primary text-on-primary red-glow hover:bg-primary/90 transition-all duration-500"
+                        href="#productos">
+                        Ver productos destacados
+                        <span
+                            class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Atmospheric scroll indicator -->
+            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-30">
+                <span class="font-label-caps text-[10px] tracking-[0.5em] rotate-180"
+                    style="writing-mode: vertical-rl;">SCROLL</span>
+                <div class="w-px h-16 bg-gradient-to-b from-primary to-transparent"></div>
+            </div>
+        </section>
+
+        <!-- SOBRE NOSOTROS -->
+        <section class="py-stack-xl relative fade-in" id="sobre-nosotros">
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -z-10 blur-[120px] rounded-full"></div>
+            <div
+                class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-xl items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="mb-16">
+                        <h2 class="font-display-lg text-5xl md:text-7xl mb-12 tracking-tighter">Sobre <span
+                                class="text-primary">Nosotros</span></h2>
+                        <div class="flex items-center gap-6 mb-12">
+                            <span
+                                class="px-4 py-2 bg-primary/10 border border-primary/20 text-primary font-data-mono text-[10px] tracking-widest uppercase">NUESTRA
+                                PASIÓN</span>
+                            <span class="w-16 h-px bg-primary/20"></span>
+                        </div>
+                        <p
+                            class="font-body-lg text-body-lg text-on-surface-variant mb-16 leading-relaxed opacity-90 max-w-xl">
+                            En <strong>Nocaut Lavanana Group</strong>, nacidos de la pasión por el combate, somos la
+                            tienda física especializada de referencia en Santa Coloma de Gramenet para practicantes de
+                            artes marciales y deportes de contacto. Nuestro compromiso es ofrecer únicamente
+                            equipamiento de la más alta calidad, testado y aprobado por profesionales.
+                        </p>
+                    </div>
+                    <div class="space-y-16">
+                        <div class="flex gap-12 group">
+                            <span class="font-data-mono text-primary text-2xl font-bold">01</span>
+                            <div>
+                                <h4 class="font-headline-lg text-2xl mb-4 group-hover:text-primary transition-colors">
+                                    Principiantes y Profesionales</h4>
+                                <p class="font-body-md text-on-surface-variant/70 leading-relaxed">Ya seas un
+                                    principiante dando sus primeros golpes o un atleta profesional preparándose para su
+                                    próximo combate de MMA, Grappling o Kickboxing...</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-12 group">
+                            <span class="font-data-mono text-primary text-2xl font-bold">02</span>
+                            <div>
+                                <h4 class="font-headline-lg text-2xl mb-4 group-hover:text-primary transition-colors">
+                                    Asesoramiento Experto</h4>
+                                <p class="font-body-md text-on-surface-variant/70 leading-relaxed">...tenemos el
+                                    asesoramiento experto y el material exacto que necesitas para alcanzar la victoria.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 relative">
+                    <div class="aspect-square relative p-20">
+                        <div class="absolute inset-0 glass-card rounded-full pulse-indicator opacity-10"></div>
+                        <div
+                            class="absolute inset-8 border border-primary/20 rounded-full animate-[spin_30s_linear_infinite]">
+                        </div>
+                        <div
+                            class="absolute inset-16 border border-primary/40 rounded-full animate-[spin_15s_linear_reverse_infinite]">
+                        </div>
+                        <div class="relative w-full h-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-8xl opacity-60">sports_mma</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MARCAS -->
+        <section class="py-24 border-y border-white/5 bg-surface-container-lowest overflow-hidden fade-in" id="marcas">
+            <div class="px-margin-desktop max-w-container-max mx-auto mb-16">
+                <h2 class="font-label-caps text-label-caps tracking-[0.5em] text-primary">MARCAS CON LAS QUE TRABAJAMOS
+                </h2>
+            </div>
+            <div class="marquee-container">
+                <div class="marquee-content flex items-center gap-24 py-8">
+                    <img alt="Nike"
+                        class="h-16 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                        src="img/nike.png" />
+                    <img alt="Nova Combat Pro"
+                        class="h-16 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                        src="img/novacombat.png" />
+                    <img alt="Custom Fighter"
+                        class="h-16 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                        src="img/customfighter.png" />
+                    <img alt="Rival Boxing Gear"
+                        class="h-16 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                        src="img/rival.png" />
+                    <!-- Duplicate -->
+                    <img alt="Nike"
+                        class="h-16 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                        src="img/nike.png" />
+                    <img alt="Nova Combat Pro"
+                        class="h-16 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                        src="img/novacombat.png" />
+                    <img alt="Custom Fighter"
+                        class="h-16 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                        src="img/customfighter.png" />
+                    <img alt="Rival Boxing Gear"
+                        class="h-16 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                        src="img/rival.png" />
+                    <!-- Triplicate to ensure smooth marquee -->
+                    <img alt="Nike"
+                        class="h-16 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                        src="img/nike.png" />
+                    <img alt="Nova Combat Pro"
+                        class="h-16 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                        src="img/novacombat.png" />
+                    <img alt="Custom Fighter"
+                        class="h-16 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                        src="img/customfighter.png" />
+                    <img alt="Rival Boxing Gear"
+                        class="h-16 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                        src="img/rival.png" />
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTOS DESTACADOS -->
+        <section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto fade-in" id="productos">
+            <div class="mb-32 flex flex-col md:flex-row md:items-end justify-between gap-12">
+                <div class="max-w-2xl">
+                    <h2 class="font-headline-lg text-headline-lg mb-6 flex items-center gap-4">
+                        <span class="w-8 h-8 bg-primary block"></span>
+                        Productos Destacados
+                    </h2>
+                    <p class="font-data-mono text-data-mono text-primary uppercase tracking-widest mb-6">Equipamiento
+                        Premium</p>
+                    <div class="font-body-md text-body-md text-on-surface-variant/70 leading-relaxed">
+                        Nuestra selección de equipamiento está diseñada para el máximo rendimiento.
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                <!-- Product 1 (Boxeo) -->
+                <div
+                    class="md:col-span-8 group relative aspect-[16/9] overflow-hidden glass-card rounded-lg border-white/5">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 opacity-90">
+                    </div>
+                    <div
+                        class="absolute inset-0 scale-105 group-hover:scale-100 transition-transform duration-1000 grayscale group-hover:grayscale-0">
+                        <div class="w-full h-full bg-surface-container flex items-center justify-center">
+                            <span
+                                class="material-symbols-outlined text-9xl text-on-surface-variant opacity-20">sports_mma</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-12 left-12 z-20">
+                        <span
+                            class="font-data-mono text-[10px] text-primary mb-4 block tracking-widest bg-primary/10 px-3 py-1 inline-block">BOXEO
+                            - 120,00 €</span>
+                        <h3 class="font-headline-lg text-4xl mb-6 tracking-tight">GUANTES PRO STRIKE</h3>
+                        <p class="font-body-md text-on-surface-variant/80 mb-6 max-w-md">Guantes de piel de primera
+                            calidad con protección multicapa, ideales para sparring intenso.</p>
+                    </div>
+                </div>
+
+                <!-- Product 2 (BJJ) -->
+                <div
+                    class="md:col-span-4 group relative aspect-[3/4] overflow-hidden glass-card rounded-lg border-white/5">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 opacity-90">
+                    </div>
+                    <div
+                        class="absolute inset-0 scale-105 group-hover:scale-100 transition-transform duration-1000 grayscale group-hover:grayscale-0">
+                        <div class="w-full h-full bg-surface-container flex items-center justify-center">
+                            <span
+                                class="material-symbols-outlined text-8xl text-on-surface-variant opacity-20">sports_martial_arts</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-12 left-12 z-20 pr-6">
+                        <span
+                            class="font-data-mono text-[10px] text-primary mb-4 block tracking-widest bg-primary/10 px-3 py-1 inline-block">BJJ
+                            / GRAPPLING - 145,00 €</span>
+                        <h3 class="font-headline-lg text-3xl mb-4">KIMONO ULTRA LIGHT</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant/80">Gi ultraligero y resistente con
+                            costuras reforzadas para competición y entrenamientos diarios.</p>
+                    </div>
+                </div>
+
+                <!-- Product 3 (Muay Thai) -->
+                <div
+                    class="md:col-span-4 group relative aspect-square overflow-hidden glass-card rounded-lg flex flex-col justify-between p-12">
+                    <div class="flex justify-between items-start">
+                        <span class="material-symbols-outlined text-primary text-4xl">shield</span>
+                        <span class="font-data-mono text-[10px] opacity-40">MUAY THAI</span>
+                    </div>
+                    <div>
+                        <h4 class="font-label-caps text-label-caps mb-4 text-primary">ESPINILLERAS ARMOR</h4>
+                        <p class="font-data-mono text-[11px] text-on-surface-variant/60 leading-relaxed mb-4">Protección
+                            integral de tibia y empeine con ajuste anatómico perfecto.</p>
+                        <span class="font-data-mono text-[12px] text-on-surface font-bold">85,00 €</span>
+                    </div>
+                </div>
+
+                <!-- Product 4 (MMA) -->
+                <div class="md:col-span-8 group relative aspect-[21/9] overflow-hidden glass-card rounded-lg">
+                    <div
+                        class="absolute inset-0 flex flex-col items-center justify-center z-10 text-center px-12 bg-surface-container-highest/20">
+                        <span class="font-data-mono text-[10px] text-primary mb-4 tracking-widest uppercase">MMA</span>
+                        <h3 class="font-headline-lg text-4xl mb-6 tracking-tight">SHORTS DE COMBATE FLEX</h3>
+                        <p class="font-body-md text-on-surface-variant/70 max-w-xl mb-6">Pantalones cortos técnicos con
+                            tejido elástico para máxima movilidad en el octágono.</p>
+                        <span class="font-data-mono text-xl text-on-surface font-bold">55,00 €</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VENTAJAS -->
+        <section class="py-stack-xl bg-surface-container-lowest border-y border-white/5 fade-in" id="ventajas">
+            <div class="px-margin-desktop max-w-container-max mx-auto">
+                <div class="text-center mb-32">
+                    <h2 class="font-label-caps text-label-caps tracking-[1em] text-primary mb-8">NUESTRAS VENTAJAS</h2>
+                    <p class="font-display-lg text-5xl tracking-tighter opacity-90">Por Qué Elegirnos</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-0 border border-white/5">
+                    <div
+                        class="p-16 border-r border-b sm:border-b-0 border-white/5 hover:bg-primary/5 transition-all group">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-6">shield_person</span>
+                        <h4 class="font-headline-lg text-3xl mb-4 group-hover:text-primary transition-colors">CALIDAD
+                        </h4>
+                        <p class="font-data-mono text-[10px] opacity-40 tracking-widest">MATERIAL PREMIUM</p>
+                        <p class="mt-12 font-data-mono text-[11px] text-primary/80 leading-relaxed">Seleccionamos
+                            rigurosamente cada producto para garantizar durabilidad y seguridad.</p>
+                    </div>
+                    <div
+                        class="p-16 border-r border-b sm:border-b-0 border-white/5 hover:bg-primary/5 transition-all group">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-6">support_agent</span>
+                        <h4 class="font-headline-lg text-3xl mb-4 group-hover:text-primary transition-colors">ATENCIÓN
+                        </h4>
+                        <p class="font-data-mono text-[10px] opacity-40 tracking-widest">ASESORAMIENTO EXPERTO</p>
+                        <p class="mt-12 font-data-mono text-[11px] text-primary/80 leading-relaxed">Asesoramiento
+                            personalizado por expertos practicantes de deportes de combate.</p>
+                    </div>
+                    <div class="p-16 border-r border-white/5 hover:bg-primary/5 transition-all group">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-6">star</span>
+                        <h4 class="font-headline-lg text-3xl mb-4 group-hover:text-primary transition-colors">MARCAS
+                        </h4>
+                        <p class="font-data-mono text-[10px] opacity-40 tracking-widest">RECONOCIMIENTO</p>
+                        <p class="mt-12 font-data-mono text-[11px] text-primary/80 leading-relaxed">Distribuidores
+                            oficiales de las marcas líderes a nivel mundial.</p>
+                    </div>
+                    <div class="p-16 hover:bg-primary/5 transition-all group">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-6">sports_martial_arts</span>
+                        <h4 class="font-headline-lg text-3xl mb-4 group-hover:text-primary transition-colors">NIVELES
+                        </h4>
+                        <p class="font-data-mono text-[10px] opacity-40 tracking-widest">PARA TODOS</p>
+                        <p class="mt-12 font-data-mono text-[11px] text-primary/80 leading-relaxed">Equipamiento
+                            adaptado desde nivel iniciación hasta el circuito profesional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UBICACION & CONTACTO -->
+        <section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto overflow-hidden fade-in"
+            id="ubicacion">
+            <div class="glass-card rounded-xl p-12 md:p-32 relative border-primary/10">
+                <div class="absolute -right-32 -top-32 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[160px]">
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                    <div>
+                        <span
+                            class="font-data-mono text-data-mono text-primary mb-8 block uppercase tracking-[0.5em]">VISÍTANOS</span>
+                        <h2 class="font-headline-lg text-6xl mb-10 tracking-tight leading-tight">Nuestra Tienda</h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant/80 mb-16 max-w-md leading-relaxed">
+                            Únete a nuestra comunidad de luchadores. Novedades, ofertas y consejos de entrenamiento en
+                            nuestro espacio físico.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-6 text-on-surface-variant group">
+                                <span class="material-symbols-outlined text-primary text-2xl">location_on</span>
+                                <span class="font-data-mono text-sm group-hover:text-primary transition-colors">C/ Josep
+                                    Anselm Clavé, 21<br>Santa Coloma de Gramenet, 08921</span>
+                            </div>
+                            <div class="flex items-center gap-6 text-on-surface-variant group">
+                                <span class="material-symbols-outlined text-primary text-2xl">schedule</span>
+                                <span class="font-data-mono text-sm group-hover:text-primary transition-colors">L - V:
+                                    10:00–13:30 · 17:00–20:30<br>Sáb y Dom: Cerrado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-12 lg:mt-0 glass-card p-12 rounded-lg border-white/10 relative shadow-2xl flex flex-col items-center text-center">
+                        <span class="material-symbols-outlined text-6xl text-primary mb-6">photo_camera</span>
+                        <h3 class="font-headline-lg text-3xl mb-4">Síguenos en Instagram</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant/80 mb-8">@nocautlavananagroup</p>
+                        <a href="https://www.instagram.com/nocautlavananagroup/" target="_blank"
+                            class="group font-label-caps text-label-caps px-8 py-4 bg-primary text-on-primary hover:bg-primary/90 transition-all w-full flex justify-center items-center gap-4">
+                            Seguir en Instagram
+                            <span
+                                class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="full-width relative mt-stack-xl bg-surface-container-lowest border-t border-white/5">
+            <div class="w-full px-margin-desktop py-32 flex flex-col items-center gap-16 max-w-container-max mx-auto">
+                <div class="font-label-caps text-label-caps text-primary tracking-[1.5em] mb-8 text-2xl text-center">
+                    NOCAUT LAVANANA GROUP</div>
+                <div class="flex flex-col items-center gap-6 text-center">
+                    <p class="font-data-mono text-[11px] text-on-surface-variant/40 max-w-3xl leading-relaxed">
+                        ESPECIALISTAS EN DEPORTES DE COMBATE EN SANTA COLOMA DE GRAMENET.
+                    </p>
+                    <p class="font-data-mono text-data-mono uppercase tracking-[0.3em] text-primary/30 mt-12">© 2025
+                        NOCAUT LAVANANA GROUP. TODOS LOS DERECHOS RESERVADOS.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, button, input, .glass-card, .marquee-content img').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
